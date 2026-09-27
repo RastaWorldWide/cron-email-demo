@@ -1,0 +1,11 @@
+# User crontab: open with `crontab -e` and ADD one line.
+# Replace /absolute/path/cron-email-demo with the real absolute path.
+# The schedule uses the cron daemon's timezone; confirm it on your host.
+
+# Safe test: every 5 minutes, build a report and an .eml, without sending.
+*/5 * * * * /bin/sh /absolute/path/cron-email-demo/scripts/run.sh --dry-run
+
+# After configuring SMTP and testing manually, use this INSTEAD of the test line.
+# Every day at 09:00 in the cron daemon's timezone:
+# 0 9 * * * /bin/sh /absolute/path/cron-email-demo/scripts/run.sh --send
+
